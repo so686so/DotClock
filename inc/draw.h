@@ -5,7 +5,11 @@
 #include <stdlib.h>
 #include "clock_panel.h"
 
-#define FRAME 20
+#define FRAME   20
+
+#define ON_DOT  "\x1b[1;37m■\x1b[0m"
+#define OFF_DOT "□"
+#define DIM_DOT "\x1b[2m■\x1b[0m"
 
 void cleanAllClockPanel( void );
 void cleanClockPanel( char** panel );

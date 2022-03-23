@@ -177,12 +177,12 @@ static void showAnimationClock( int idx, int row )
 
     for( int col = 0; col < PANEL_WIDTH; col++ ) {
         if( arrMatch[idx][row][col] ) {
-            printf("%s ", (curPanel[row][col]) ? "\x1b[1;37m■\x1b[0m" : "□");
+            printf("%s ", (curPanel[row][col]) ? ON_DOT : OFF_DOT);
             continue;
         }
 
         curBit = rand()%2;
-        printf("%s ", (curBit) ? "\x1b[2m■\x1b[0m" : "□");
+        printf("%s ", (curBit) ? DIM_DOT : OFF_DOT);
 
         if( curBit == curPanel[row][col] ) {
             arrMatch[idx][row][col] = 0x01;
@@ -199,12 +199,12 @@ void showClock( void )
     if( getAllPanelMatchDone() == TRUE ) return;
 
     for( int row = 0; row < PANEL_HEIGHT; row++ ) {
-        for( int idx = 0; idx < PANEL_MAX; idx++ ) {
+        for( int idx = 0; idx < PANEL_MAX; idx++ ){
             PANEL  curData  = totalPanel[idx];
             char** curPanel = curData.panel;
 
             for( int col = 0; col < curData.width; col++ ) {
-                printf("%s ", (curPanel[row][col]) ? "\x1b[1;37m■\x1b[0m" : "□");
+                printf("%s ", (curPanel[row][col]) ? ON_DOT : OFF_DOT);
             }
 
             if( getPanelMatchDone( idx ) == TRUE ) 

@@ -23,7 +23,7 @@ BOOL createClockPanel( void )
             curPanel->matchDone = TRUE;
         } else {
             curPanel->isSep     = FALSE;
-            curPanel->curNum    = 0;
+            curPanel->curNum    = -1;
             curPanel->height    = PANEL_HEIGHT;
             curPanel->width     = PANEL_WIDTH;            
             curPanel->matchDone = FALSE;
